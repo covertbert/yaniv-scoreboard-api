@@ -1,4 +1,15 @@
-type User{
+type Game {
   id: ID! @unique
+  createdAt: DateTime!
+  targetScore: Int!
+  players: [Player!]!
+  hasFinished: Boolean
+}
+
+type Player {
+  id: ID! @unique
+  game: Game
+  createdAt: DateTime!
   name: String!
+  score: Int
 }
