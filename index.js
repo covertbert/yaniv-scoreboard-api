@@ -3,26 +3,14 @@ const { prisma } = require('./prisma-client')
 
 async function main () {
   const allPlayers = await prisma.players()
-  const allGames = await prisma.games()
 
   const typeDefs = gql`
     type Player {
       name: String!
       id: String!
-      game: Game
-      name: String!
-      score: Int
-    }
-
-    type Game {
-      id: ID!
-      targetScore: Int!
-      players: [Player!]!
-      hasFinished: Boolean
     }
 
     type Query {
-      games: [Game]
       players: [Player]
     }
   `
@@ -30,7 +18,6 @@ async function main () {
   const resolvers = {
     Query: {
       players: () => allPlayers,
-      games: () => allGames,
     },
   }
 
