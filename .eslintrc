@@ -1,0 +1,20 @@
+{
+  "extends": [
+    "airbnb-standard"
+  ],
+  "rules": {
+    "semi": [
+      "error",
+      "never"
+    ],
+    "arrow-parens": [
+      "error",
+      "always"
+    ],
+    "comma-dangle": [
+      "error",
+      "only-multiline"
+    ],
+    "max-len": "off"
+  }
+}
